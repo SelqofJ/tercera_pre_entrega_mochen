@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Berries & Co.: {% block subtitulo %}{% endblock subtitulo %}</title>
+        <title>Coderhouse: {% block subtitulo %}{% endblock subtitulo %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -19,8 +18,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <style>
-            {% block estilos %}
-            {% endblock estilos %}
+        {%block estilos%}
+        {%endblock estilos%} 
         </style>
 
     </head>
@@ -29,7 +28,9 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url '' %}">Productos</a>
+                <a class="navbar-brand" href="{% url 'listar_productos' %}">Productos</a>
+                <a class="navbar-brand" href="{% url 'listar_clientes' %}">Clientes</a>
+                <a class="navbar-brand" href="{% url 'listar_comentarios' %}">Comentarios</a>
                 <a class="btn btn-primary" href="{% url 'inicio' %}">INICIAR</a>
             </div>
         </nav>
@@ -50,7 +51,8 @@
                             <li class="list-inline-item"><a href="#!">Contacto</a></li>
                       
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Curso de Python - CoderHouse.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Dale a tu cuerpo Berries, tu salud te lo agradecera </p>
+
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
@@ -61,7 +63,7 @@
                                 <a href="#!"><i class="bi-twitter fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.instagram.com/espndeportes/?hl=es"><i class="bi-instagram fs-3"></i></a>
+                                <a href="https://www.instagram.com/@deliberry.ba/?hl=es"><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
                     </div>

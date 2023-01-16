@@ -1,22 +1,21 @@
-{% extends "compras_1/base.html" %}
+{% extends 'compras_1/base.html' %}
 
 {% block subtitulo %}Lista de productos{% endblock subtitulo %}
 
 {% block contenido %}
-<h1>Lista de productos</h1>
-<a href="{% url 'productos' %}">Añadir</a>
-<br>
+<section>
+  <div>
+    <h1>Lista de productos</h1>
+    <ul>
+      {% for product in productos %}
+      <li>{{product}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
-<form action="{% url 'buscar_cursos' %}" method="post">
-  {% csrf_token %}
-  <input type="text" name="busqueda">
-  <input type="submit" value="Buscar">
-</form>
-<br>
-
-<ul>
-{% for product in productos %}
-  <li>{{ product }}</li>
-{% endfor %}
-</ul>
-{% endblock contenido %}
+{% block estilos %}
+h1.titulos-coder {
+  color: orange;
+}
+{% endblock estilos %}
