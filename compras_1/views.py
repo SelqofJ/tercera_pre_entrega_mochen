@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.db.models import Q
 from django.urls import reverse
-from compras_1.models import  Clientes, Productos, Estado_producto, Comentarios
+from compras_1.models import  *
 from compras_1.forms import FormularioCliente
 
 def bienvenidos (request):
@@ -16,13 +16,23 @@ def inicio(request):
     )
 
 def listar_productos (request): 
-    productos = {'producto': ['Arandanos', 'Moras', 'Frutillas']}
+    productos = {'productos': ['Arandanos', 'Moras', 'Frutillas']}
     return render(
         request = request, 
         template_name ='compras_1/lista_productos.html',
         context= productos
     )
-
+"""
+def listar_comentarios (request): 
+    comentarios = {
+        'compras_1': Comentarios.objects.all()
+        }
+    return render(
+        request=request,
+        template_name='compras_1/lista_comentarios.html',
+        context=comentarios,       
+    )
+"""
 def listar_clientes(request):
     clientes = {
         'compras_1': Clientes.objects.all()
@@ -32,7 +42,7 @@ def listar_clientes(request):
         template_name='compras_1/lista_clientes.html',
         context=clientes,
     )
-
+"""
 
 def crear_cliente(request):
     if request.method == "POST":
@@ -51,7 +61,7 @@ def crear_cliente(request):
         template_name='compras_1/formulario_cliente.html',
         context={'formulario': formulario},
      )   
-"""
+
 def buscar_cursos(request):
     if request.method == "POST":
         data = request.POST

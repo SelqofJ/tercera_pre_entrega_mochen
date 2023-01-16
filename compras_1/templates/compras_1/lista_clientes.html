@@ -1,8 +1,19 @@
-{% extends "compra_1/base.html" %}
+{% extends "compras_1/base.html" %}
 
 {% block subtitulo %}Lista de clientes{% endblock subtitulo %}
 
 {% block contenido %}
+<section>
+  <div>
+    <h1>Lista de comentarios</h1>
+    <ul>
+      {% for cliente in clientes %}
+      <li>{{cliente.nombre}}, {{cliente.apellido}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
 <form action="{% url 'lista_clientes' %}" method="post">
   {% csrf_token %}
   {{ formulario.as_p }}

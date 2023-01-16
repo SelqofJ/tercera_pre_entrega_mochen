@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Coderhouse: {% block subtitulo %}{% endblock subtitulo %}</title>
+        <title>Berry & Co.: {% block subtitulo %}{% endblock subtitulo %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -17,9 +17,9 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-        <style>
-        {%block estilos%}
-        {%endblock estilos%} 
+        <!-- me da error en block y endblock estilos-->
+       <style> 
+    
         </style>
 
     </head>
@@ -30,7 +30,6 @@
             <div class="container">
                 <a class="navbar-brand" href="{% url 'listar_productos' %}">Productos</a>
                 <a class="navbar-brand" href="{% url 'listar_clientes' %}">Clientes</a>
-                <a class="navbar-brand" href="{% url 'listar_comentarios' %}">Comentarios</a>
                 <a class="btn btn-primary" href="{% url 'inicio' %}">INICIAR</a>
             </div>
         </nav>
@@ -63,7 +62,7 @@
                                 <a href="#!"><i class="bi-twitter fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.instagram.com/@deliberry.ba/?hl=es"><i class="bi-instagram fs-3"></i></a>
+                                <a href="https://www.instagram.com/deliberry.ba/?hl=es"><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
                     </div>
