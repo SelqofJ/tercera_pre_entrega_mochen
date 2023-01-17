@@ -1,4 +1,7 @@
-DATOS GENERALES
+{% extends "compras_1/base.html" %}
+
+{% block subtitulo %}DATOS GENERALES {% endblock subtitulo %}
+
 <br>
 Pagina de compra de berries (en contruccion)
 <br>
