@@ -1,17 +1,28 @@
-dATOS GENERALES
+DATOS GENERALES
+<br>
 Pagina de compra de berries (en contruccion)
+<br>
 Codigo Python 3.11/Django GIT Version 2.39.0 trabajado desde  VSC en Windows
+<br>
 Estudiante de Coderhouse
 Creado por: Selva Mochen
 Fecha creacion: 17-01-2023
+<br>
+<br>
 
 
 INSTRUCCIONES PARA INSTALAR EN LOCAL
+<br>
 1- Crear carpeta Madre, donde guardaras tu ambiente virtual y tu proyecto Django
+<br>
 2- Crear ambiente virtual en esa carpeta para este proyecto
+<br>
 3- Entra a Visual Studio Code
+<br>
 4- Posicionate desde la terminal en la carpeta de Madre
+<br>
 5- Activa el ambiente virtual
+
 6- 
 
 
