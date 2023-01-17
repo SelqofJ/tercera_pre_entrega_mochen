@@ -3,14 +3,13 @@
 {% block subtitulo %}Lista de comentarios{% endblock subtitulo %}
 
 {% block contenido %}
-<section>
-  <div>
+
     <h1>Lista de comentarios</h1>
     <ul>
       {% for comment in comentarios %}
       <li>{{comment}}</li>
       {% endfor %}
     </ul>
-  </div>
-</section>
+    <a href="{% url 'crear_comentario' %}">Dejanos tus comentarios para que podamos mejorar! </a>
+
 {% endblock contenido %}

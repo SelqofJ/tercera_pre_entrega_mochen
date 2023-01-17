@@ -1,0 +1,12 @@
+{% extends "compras_1/base.html" %}
+
+{% block subtitulo %}Nuevo comentario {% endblock subtitulo %}
+
+{% block contenido %}
+<form action="{% url 'crear_comentario' %}" method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <input type="submit" value="Enviar" />
+</form>
+{% endblock contenido %}
+
