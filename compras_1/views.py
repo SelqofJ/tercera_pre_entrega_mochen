@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.db.models import Q
 from django.urls import reverse
-from compras_1.models import  *
-from compras_1.forms import FormularioCliente
+from compras_1.models import Clientes, Productos, Comentarios
+from compras_1.forms import ClienteFormulario
 
 def bienvenidos (request):
     return HttpResponse(f'Bienvenidos a Blueberry healthy space. Fecha: {datetime.now().date()}' )
@@ -16,37 +16,39 @@ def inicio(request):
     )
 
 def listar_productos (request): 
-    productos = {'productos': ['Arandanos', 'Moras', 'Frutillas']}
+    productos = {
+        'productos': Productos.objects.all()
+        }
     return render(
         request = request, 
         template_name ='compras_1/lista_productos.html',
         context= productos
     )
-"""
+
 def listar_comentarios (request): 
     comentarios = {
-        'compras_1': Comentarios.objects.all()
+        'comentarios': Comentarios.objects.all()
         }
     return render(
         request=request,
         template_name='compras_1/lista_comentarios.html',
         context=comentarios,       
     )
-"""
+
 def listar_clientes(request):
     clientes = {
-        'compras_1': Clientes.objects.all()
+        'clientes': Clientes.objects.all()
     }
     return render(
         request=request,
         template_name='compras_1/lista_clientes.html',
         context=clientes,
     )
-"""
+
 
 def crear_cliente(request):
     if request.method == "POST":
-        formulario = FormularioCliente(request.POST)
+        formulario = ClienteFormulario(request.POST)
 
         if formulario.is_valid():
             data = formulario.cleaned_data
@@ -55,13 +57,13 @@ def crear_cliente(request):
             url_exitosa = reverse('listar_clientes')
             return redirect(url_exitosa)
     else:  # GET
-        formulario = FormularioCliente()
+        formulario = ClienteFormulario()
     return render(
         request=request,
         template_name='compras_1/formulario_cliente.html',
         context={'formulario': formulario},
      )   
-
+"""
 def buscar_cursos(request):
     if request.method == "POST":
         data = request.POST
